@@ -1,39 +1,42 @@
 const CACHE_NAME = 'stone-site-cache-v2';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/sad_stones.html',
-  '/funny_stones.html',
-  '/weird_stones.html',
-  '/feedback.html',
-  '/feedback_success.php',
-  '/style.css',
-  '/images/main_1.jpg',
-  '/images/main_2.jpg',
-  '/images/main_3.jpg',
-  '/images/sad_1.jpg',
-  '/images/sad_2.jpg',
-  '/images/sad_3.jpg',
-  '/images/sad_4.jpg',
-  '/images/sad_5.jpg',
-  '/images/funny_1.jpg',
-  '/images/funny_2.jpg',
-  '/images/funny_3.jpg',
-  '/images/funny_4.jpg',
-  '/images/funny_5.jpg',
-  '/images/weird_1.jpg',
-  '/images/weird_2.jpg',
-  '/images/weird_3.jpg',
-  '/images/weird_4.jpg',
-  '/images/weird_5.jpg'
+  '/stone-site/',
+  '/stone-site/index.html',
+  '/stone-site/sad_stones.html',
+  '/stone-site/funny_stones.html',
+  '/stone-site/weird_stones.html',
+  '/stone-site/feedback.html',
+  '/stone-site/feedback_success.php',
+  '/stone-site/sw.js',
+  '/stone-site/style.css',
+  '/stone-site/images/main_1.jpg',
+  '/stone-site/images/main_2.jpg',
+  '/stone-site/images/main_3.jpg',
+  '/stone-site/images/sad_1.jpg',
+  '/stone-site/images/sad_2.jpg',
+  '/stone-site/images/sad_3.jpg',
+  '/stone-site/images/sad_4.jpg',
+  '/stone-site/images/sad_5.jpg',
+  '/stone-site/images/funny_1.jpg',
+  '/stone-site/images/funny_2.jpg',
+  '/stone-site/images/funny_3.jpg',
+  '/stone-site/images/funny_4.jpg',
+  '/stone-site/images/funny_5.jpg',
+  '/stone-site/images/weird_1.jpg',
+  '/stone-site/images/weird_2.jpg',
+  '/stone-site/images/weird_3.jpg',
+  '/stone-site/images/weird_4.jpg',
+  '/stone-site/images/weird_5.jpg'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        console.log('Кэшируем основные файлы');
+        return cache.addAll(urlsToCache).catch(err => {
+          console.error('Ошибка кэширования:', err);
+        });
       })
   );
 });
