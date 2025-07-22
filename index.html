@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000"/>
+<link rel="manifest" href="/manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каменный прикол</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на сайт камней!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="sad_stones.html">Топ 5 грустных камней</a></li>
+            <li><a href="funny_stones.html">Топ 5 смешных камней</a></li>
+            <li><a href="weird_stones.html">Топ 5 необычных камней</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Знаете ли вы, что...</h2>
+        <p>В мире камней больше 2-х!</p>
+        
+        <div class="main-gallery">
+            <div class="main-stone"><img src="images/main_1.jpg" alt="Камень №1"></div>
+            <div class="main-stone"><img src="images/main_2.jpg" alt="Камень №2"></div>
+            <div class="main-stone"><img src="images/main_3.jpg" alt="Камень №3"></div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Каменный прикол
+    </footer>
+	<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful');
+      })
+      .catch(err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  });
+}
+</script>
+</body>
+</html>

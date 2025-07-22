@@ -1,0 +1,21 @@
+{
+  "name": "Каменный прикол",
+  "short_name": "Камни",
+  "description": "Сайт о самых интересных, грустных и смешных камнях",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#5a3921",
+  "theme_color": "#7a5c3c",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
