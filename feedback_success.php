@@ -6,7 +6,7 @@ session_start();
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#000000"/>
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Спасибо за отзыв!</title>

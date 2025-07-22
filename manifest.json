@@ -2,7 +2,7 @@
   "name": "Каменный прикол",
   "short_name": "Камни",
   "description": "Сайт о самых интересных, грустных и смешных камнях",
-  "start_url": "/index.html",
+  "start_url": "/stone-site/index.html",
   "display": "standalone",
   "background_color": "#5a3921",
   "theme_color": "#7a5c3c",
