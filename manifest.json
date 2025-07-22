@@ -2,20 +2,36 @@
   "name": "Каменный прикол",
   "short_name": "Камни",
   "description": "Сайт о самых интересных, грустных и смешных камнях",
+  "id": "/stone-site/",  // Добавлено
   "start_url": "/stone-site/index.html",
+  "scope": "/stone-site/",
   "display": "standalone",
   "background_color": "#5a3921",
   "theme_color": "#7a5c3c",
   "icons": [
     {
-      "src": "icon-192x192.png",
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/stone-site/screenshots/mobile.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/stone-site/screenshots/desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ]
 }
