@@ -1,5 +1,5 @@
 <form id="feedbackForm" class="feedback-form">
-  <!-- Поля оставляем как есть -->
+  <!-- Ваши поля формы -->
   <button type="submit" class="submit-button">Отправить</button>
 </form>
 
@@ -7,6 +7,7 @@
 document.getElementById('feedbackForm').addEventListener('submit', function(e) {
   e.preventDefault();
   
+  // Сохраняем данные в LocalStorage
   const feedback = {
     fullname: document.getElementById('fullname').value,
     email: document.getElementById('email').value,
@@ -14,12 +15,12 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
     date: new Date().toLocaleString()
   };
   
-  // Сохраняем в LocalStorage
-  let allFeedback = JSON.parse(localStorage.getItem('feedbackData') || '[]');
-  allFeedback.push(feedback);
-  localStorage.setItem('feedbackData', JSON.stringify(allFeedback));
+  // Добавляем в массив отзывов
+  let allFeedback = JSON.parse(localStorage.getItem('feedbackData') || [];
+  allFeedback.unshift(feedback); // Добавляем в начало
+  localStorage.setItem('feedbackData', JSON.stringify(allFeedback.slice(0, 5))); // Храним только 5 последних
   
-  // Переходим на страницу успеха
+  // Перенаправляем на страницу успеха
   window.location.href = 'feedback_success.html';
 });
 </script>
