@@ -1,49 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#000000"/>
-<link rel="manifest" href="manifest.json">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обратная связь</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Обратная связь</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="sad_stones.html">Топ 5 грустных камней</a></li>
-            <li><a href="funny_stones.html">Топ 5 смешных камней</a></li>
-            <li><a href="weird_stones.html">Топ 5 необычных камней</a></li>
-            <li><a href="feedback.html">Обратная связь</a></li>
-        </ul>
-    </nav>
-    <main>
-        <form action="send_feedback.php" method="post" class="feedback-form">
-            <div class="form-group">
-                <label for="fullname">ФИО:</label>
-                <input type="text" id="fullname" name="fullname" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="comment">Комментарий:</label>
-                <textarea id="comment" name="comment" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-button">Отправить</button>
-        </form>
-    </main>
-    <footer>
-        &copy; 2025 Каменный прикол
-    </footer>
-</body>
-</html>
+<form id="feedbackForm" class="feedback-form">
+  <!-- Поля оставляем как есть -->
+  <button type="submit" class="submit-button">Отправить</button>
+</form>
+
+<script>
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const feedback = {
+    fullname: document.getElementById('fullname').value,
+    email: document.getElementById('email').value,
+    comment: document.getElementById('comment').value,
+    date: new Date().toLocaleString()
+  };
+  
+  // Сохраняем в LocalStorage
+  let allFeedback = JSON.parse(localStorage.getItem('feedbackData') || '[]');
+  allFeedback.push(feedback);
+  localStorage.setItem('feedbackData', JSON.stringify(allFeedback));
+  
+  // Переходим на страницу успеха
+  window.location.href = 'feedback_success.html';
+});
+</script>

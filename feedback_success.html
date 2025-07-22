@@ -1,0 +1,22 @@
+<!-- Скопируйте верстку из feedback_success.php, но замените PHP-код на: -->
+<script>
+const allFeedback = JSON.parse(localStorage.getItem('feedbackData') || [];
+const latestFeedback = allFeedback[allFeedback.length - 1];
+
+if (latestFeedback) {
+  document.querySelector('.feedback-display').innerHTML = `
+    <p><strong>ФИО:</strong> ${latestFeedback.fullname}</p>
+    <p><strong>Email:</strong> ${latestFeedback.email}</p>
+    <p><strong>Комментарий:</strong> ${latestFeedback.comment}</p>
+  `;
+  
+  if (allFeedback.length > 1) {
+    let html = '<h3>Последние отзывы:</h3><ul>';
+    allFeedback.slice(0, 5).forEach(item => {
+      html += `<li><p><strong>${item.fullname}</strong> (${item.email})</p>
+               <p>${item.comment}</p><small>${item.date}</small></li>`;
+    });
+    document.querySelector('.recent-feedback').innerHTML = html + '</ul>';
+  }
+}
+</script>
