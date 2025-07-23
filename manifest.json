@@ -1,35 +1,23 @@
 {
   "name": "Каменный прикол",
   "short_name": "Камни",
-  "start_url": "/my-pwa/index.html",
-  "scope": "/my-pwa/",
+  "description": "Сайт о самых интересных, грустных и смешных камнях",
+  "id": "/stone-site/",
+  "start_url": "/stone-site/index.html",
+  "scope": "/stone-site/",
   "display": "standalone",
   "background_color": "#5a3921",
-  "theme_color": "#5a3921",
-  "description": "Лучшая коллекция камней с характером",
-  "orientation": "portrait-primary",
+  "theme_color": "#7a5c3c",
   "icons": [
     {
-      "src": "/my-pwa/icons/icon192.png",
+      "src": "icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/my-pwa/icons/icon512.png",
+      "src": "icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
-  ],
-  "screenshots": [
-    {
-      "src": "/my-pwa/screenshots/screenshot1.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false
+  ]
 }
